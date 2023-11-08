@@ -27,9 +27,26 @@ public class CacheRemovingBehavior<TRequest, TResponse> : IPipelineBehavior<TReq
 
         if (request.CacheGroupKey != null)
         {
-            byte[]? cachedGroup = await _cache.GetAsync(request.CacheGroupKey, cancellationToken);
-            if (cachedGroup != null)
+            //byte[]? cachedGroup = await _cache.GetAsync(request.CacheGroupKey, cancellationToken);
+            //if (cachedGroup != null)
+            for (int i = 0; i < request.CacheGroupKey.Count(); i++)
             {
+                byte[]? cachedGroup = await _cache.GetAsync(request.CacheGroupKey[i], cancellationToken);
+                if (cachedGroup != null){
+                    HashSet<string> keysInGroup = JsonSerializer.Deserialize<HashSet<string>>(Encoding.Default.GetString(cachedGroup))!;
+                    foreach (string key in keysInGroup)
+                    {
+                        await _cache.RemoveAsync(key, cancellationToken);
+                        _logger.LogInformation($"Removed Cache -> {key}");
+                    }
+
+                    await _cache.RemoveAsync(request.CacheGroupKey[i], cancellationToken);
+                    _logger.LogInformation($"Removed Cache -> {request.CacheGroupKey}");
+                    await _cache.RemoveAsync(key: $"{request.CacheGroupKey}SlidingExpiration", cancellationToken);
+                    _logger.LogInformation($"Removed Cache -> {request.CacheGroupKey}SlidingExpiration");
+                }
+            }
+            /* {
                 HashSet<string> keysInGroup = JsonSerializer.Deserialize<HashSet<string>>(Encoding.Default.GetString(cachedGroup))!;
                 foreach (string key in keysInGroup)
                 {
@@ -41,7 +58,7 @@ public class CacheRemovingBehavior<TRequest, TResponse> : IPipelineBehavior<TReq
                 _logger.LogInformation($"Removed Cache -> {request.CacheGroupKey}");
                 await _cache.RemoveAsync(key: $"{request.CacheGroupKey}SlidingExpiration", cancellationToken);
                 _logger.LogInformation($"Removed Cache -> {request.CacheGroupKey}SlidingExpiration");
-            }
+            } */
         }
 
         if (request.CacheKey != null)

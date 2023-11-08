@@ -1,3 +1,69 @@
+<h1 align="center">MiningHQ</h1>
+
+<br />
+
+<p align="center">
+  <a href="https://github.com/muratfirtina/MiningHQ/graphs/contributors"><img src="https://img.shields.io/github/contributors/muratfirtina/MiningHQ.svg?style=for-the-badge"></a>
+  <a href="https://github.com/muratfirtina/MiningHQ/network/members"><img src="https://img.shields.io/github/forks/muratfirtina/MiningHQ.svg?style=for-the-badge"></a>
+  <a href="https://github.com/muratfirtina/MiningHQ/stargazers"><img src="https://img.shields.io/github/stars/muratfirtina/MiningHQ.svg?style=for-the-badge"></a>
+  <a href="https://github.com/muratfirtina/MiningHQ/issues"><img src="https://img.shields.io/github/issues/muratfirtina/MiningHQ.svg?style=for-the-badge"></a>
+  <a href="https://github.com/kmuratfirtina/MiningHQ/blob/master/LICENSE"><img src="https://img.shields.io/github/license/muratfirtina/MiningHQ.svg?style=for-the-badge"></a>
+</p><br />
+
+## 💻 About The Project
+<h3 align="center">"This is a mining site job tracking program. It can be used to calculate the efficiency of machines and maintain records of employees."</h3>
+
+### Built With
+
+[![](https://img.shields.io/badge/.NET%20Core-512BD4?style=for-the-badge&logo=dotnet&logoColor=white)](https://learn.microsoft.com/tr-tr/dotnet/welcome)
+
+It is a WebAPI project written in .NetCore. It can be run and used just like a classic WebAPI project.
+
+## ⚙️ Getting Started
+
+To get a local copy up and running follow these simple steps.
+
+### Prerequisites
+
+- .NET 7
+
+### Installation
+
+1. Add submodule to your backend project repository
+   ```sh
+   git submodule add https://github.com/muratfirtina/MiningHQ.git src/MiningHQ
+   ```
+
+- Run the following command to update this module
+  ```sh
+   git submodule update --remote src/MiningHQ
+   ```
+  
+## 🚀 Usage
+
+1. Check this [MiningHQ](https://github.com/muratfirtina/MiningHQ.git) repository
+2. Run the following command to update this module
+
+### Analysis
+
+1. If not, Install dotnet tool `dotnet tool restore`.
+2. Run anaylsis command `dotnet roslynator analyze`
+3. Run format command `dotnet csharpier .`
+4. Run test command `dotnet test`
+5. Run build command `dotnet build`
+6. Run publish command `dotnet publish`
+7. Run clean command `dotnet clean`
+8. Run restore command `dotnet restore`
+9. Run pack command `dotnet pack`
+10. Run migrate command `dotnet ef database update`
+11. Run add migration command `dotnet ef migrations add <migrationName>`
+12. Run remove migration command `dotnet ef migrations remove`
+
+
+<br />
+<br />
+<h1 align="center">corePackages</h1>
+
 <p align="center">
   <a href="https://github.com/kodlamaio-projects/nArchitecture.Core/graphs/contributors"><img src="https://img.shields.io/github/contributors/kodlamaio-projects/nArchitecture.Core.svg?style=for-the-badge"></a>
   <a href="https://github.com/kodlamaio-projects/nArchitecture.Core/network/members"><img src="https://img.shields.io/github/forks/kodlamaio-projects/nArchitecture.Core.svg?style=for-the-badge"></a>
@@ -22,7 +88,7 @@
     ·
     <a href="https://github.com/kodlamaio-projects/nArchitecture.Core/issues">Request Feature</a>
   </p>
-</p>
+
 
 ## 💻 About The Project
 

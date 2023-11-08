@@ -31,11 +31,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Enums\" />
-    <Folder Include="EmailAuthenticator\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Include="..\docs\n-architecture-logo.png">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
